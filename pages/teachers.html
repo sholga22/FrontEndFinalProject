@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teachers</title>
+  <link rel="stylesheet" href="../css/teachers.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="students.html">Students</a></li>
+        <li>Teachers</li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav> 
+    
+    <h1>Teachers</h1>
+    <div class="controls">
+      <label for="subjectFilter">Filter by Subject:</label>
+      <select id="subjectFilter">
+        <option value="all">All</option>
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="english">English</option>
+      </select>
+    
+
+        <!-- Buttons Section -->
+        <div class="buttons">
+            <button id="addTeacherBtn">Add Teacher</button>
+        </div>
+
+    <!-- Add Teacher Form (hidden by default) -->
+    <div id="addTeacherForm" class="form-container" style="display:none;">
+      <h2>Add New Teacher</h2>
+      <form id="teacherForm">
+        <label for="teacherName">Teacher Name:</label>
+        <input type="text" id="teacherName" name="teacherName" required>
+        
+        <label for="teacherSubject">Subject:</label>
+        <input type="text" id="teacherSubject" name="teacherSubject" required>
+
+        <button type="submit">Save Teacher</button>
+        <button type="button" id="cancelAddTeacher">Cancel</button>
+      </form>
+    </div>
+    
+  </header>
+
+  <main>
+    <table id="teachersTableHead">
+      <thead>
+        <tr>
+          <!-- Head will be dynamically inserted here -->
+          <!--<th>Name <a href="#" class="arrow" onclick="sortTable(1, 'asc')">&#9650;</a> <a href="#" class="arrow" onclick="sortTable(1, 'desc')">&#9660;</a>-->
+          <!--</th>-->
+          <th>Subject</th>
+          <th>Photo</th>
+        </tr>
+      </thead>
+      <tbody id="teachersTableBody">
+        <!-- Rows will be dynamically inserted here -->
+      </tbody>
+    </table>
+  </main>
+
+  <script type="module" src="../js/teachers_add.js"></script>
+</body>
+</html>

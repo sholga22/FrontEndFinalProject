@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students</title>
+  <link rel="stylesheet" href="../css/students.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li>Students</li>
+        <li><a href="teachers.html">Teachers</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav> 
+
+    <h1>Students</h1>
+    <div class="controls">
+      <label for="subjectFilter">Filter by Subject:</label>
+      <select id="subjectFilter">
+        <option value="all">All</option>
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="english">English</option>
+      </select>
+    
+
+        <!-- Buttons Section -->
+        <div class="buttons">
+            <button id="addTeacherBtn">Add Student</button>
+        </div>
+
+    <!-- Add Teacher Form (hidden by default) -->
+    <div id="addTeacherForm" class="form-container" style="display:none;">
+      <h2>Add New Student</h2>
+      <form id="teacherForm">
+        <label for="teacherName">Student Name:</label>
+        <input type="text" id="studentName" name="Name" required>
+        
+        <label for="teacherSubject">Subject:</label>
+        <input type="text" id="studentSubject" name="studentSubject" required>
+
+        <button type="submit">Save Student</button>
+        <button type="button" id="cancelAddTStudent">Cancel</button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Photo</th>
+        </tr>
+      </thead>
+      <tbody id="StudentsTable">
+        <!-- Rows will be dynamically inserted here -->
+      </tbody>
+    </table>
+  </main>
+
+  <script type="module" src="../js/students.js"></script>
+</body>
+</html>
