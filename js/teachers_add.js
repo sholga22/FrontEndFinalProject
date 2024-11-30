@@ -2,7 +2,6 @@
 
 import  { saveTeacher, getTeachers } from "/db/localStorageTeachers.js";
 
-
 const teachersTableHead = document.getElementById("teachersTableHead");
 const teachersTable = document.querySelector("#teachersTableBody");
 

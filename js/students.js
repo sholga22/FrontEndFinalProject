@@ -1,8 +1,6 @@
 // script.js
 
 import  { saveTeacher, getTeachers } from "/db/localStorage.js";
-//import localStorage from `../db/localStorage.js`;
-
 
 
 

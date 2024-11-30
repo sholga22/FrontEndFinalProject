@@ -1,5 +1,6 @@
 // Module to handle teacher data in LocalStorage
 
+
 // Save a teacher to LocalStorage
 export function saveTeacher(teacher) {
     // Get the current list of teachers from LocalStorage, or initialize it as an empty array if it doesn't exist
