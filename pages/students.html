@@ -13,7 +13,7 @@
       <ul class="menu">
         <li><a href="../index.html">Home</a></li>
         <li>Students</li>
-        <li><a href="students.html">Students</a></li>
+        <li><a href="teachers.html">Teachers</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </nav> 
@@ -34,7 +34,12 @@
       <!-- Buttons Section -->
       <br>
       <div class="buttons">
-        <button id="addStudentBtn">Add Studen</button>
+        <button id="addStudentBtn">Add Student</button>
+      </div>
+
+      <br>
+      <div class="buttons">
+        <button id="deleteStudentBtn" style="display: none;">Delete Student</button>
       </div>
 
     <!-- Add Student Form (hidden by default) -->
@@ -47,10 +52,10 @@
         <label for="studentSubject">Subject:</label>
         <input type="text" id="studentSubject" name="studentSubject" required>
 
-        <label for="studentOrt">Subject:</label>
+        <label for="studentOrt">Ort:</label>
         <input type="text" id="studentOrt" name="studentOrt" required>
 
-        <label for="studentTelephone">Subject:</label>
+        <label for="studentTelephone">Telephone:</label>
         <input type="text" id="studentTelephone" name="studentTelephone" required>
 
         <button type="submit">Save Student</button>
@@ -65,9 +70,6 @@
       <thead>
         <tr>
           <!-- Head will be dynamically inserted here -->
-          <th>Subject</th>
-          <th>Ort</th>
-          <th>Telefon nummer</th>
         </tr>
       </thead>
       <tbody id="studentsTableBody">
@@ -76,6 +78,6 @@
     </table>
   </main>
 
-  <script type="module" src="../js/students_add.js"></script>
+  <script type="module" src="../js/students.js"></script>
 </body>
 </html>

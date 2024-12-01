@@ -17,8 +17,7 @@ export function saveTeacher(teacher) {
   export function getTeachers(subject = null) {
     // Retrieve the list of teachers from LocalStorage
     let teachers = JSON.parse(localStorage.getItem('teachers'))|| [];
-    console.log("мы во внешней функции");
-    console.log(subject);
+    
     // If a subject is provided, filter teachers by the subject
     subject = subject.toLowerCase();
     if (subject && subject !=="all") {
