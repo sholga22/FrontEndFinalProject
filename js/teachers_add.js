@@ -47,7 +47,7 @@ function sortTableByColumn(columnIndex, ascending = true) {
 
 
 // Data for headers
-const headers = ["Name", "Subject", "Photo", "Actions"]; // Добавлена колонка "Photo"
+const headers = ["Name", "Subject", "Photo", "Ort"]; // Добавлена колонка "Photo"
 
 // Function to create the table header with sorting arrows
 function createTableHeader(tableId) {
