@@ -13,16 +13,18 @@ export function saveTeacher(teacher) {
     localStorage.setItem('teachers', JSON.stringify(teachers));
   }
   
-  // Get all teachers from LocalStorage
-  export function getTeachers() {
+  // Get all teachers from LocalStorage whith filter
+  export function getTeachers(subject = null) {
     // Retrieve the list of teachers from LocalStorage
-    let teachers = JSON.parse(localStorage.getItem('teachers'));
-    
-    // If there are no teachers stored, return an empty array
-    if (!teachers) {
-      return [];
+    let teachers = JSON.parse(localStorage.getItem('teachers'))|| [];
+    console.log("мы во внешней функции");
+    console.log(subject);
+    // If a subject is provided, filter teachers by the subject
+    subject = subject.toLowerCase();
+    if (subject && subject !=="all") {
+      teachers = teachers.filter(teacher => teacher.subject.toLowerCase()===subject);
     }
-    
+
     return teachers;
   }
   

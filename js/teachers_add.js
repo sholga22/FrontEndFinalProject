@@ -10,7 +10,7 @@ const addTeacherForm = document.getElementById("addTeacherForm");
 const teacherForm = document.getElementById("teacherForm");
 const cancelAddTeacher = document.getElementById("cancelAddTeacher");
 
-
+const subjectFilter = document.getElementById("subjectFilter");
 
 //=== code related how to sort from head ===//
 // string sort by onclick
@@ -91,7 +91,7 @@ function createTableHeader(tableId) {
             upArrow.style.fontSize = "12px"; // Adjust arrow size
             upArrow.onclick = () => {
                 console.log(`Sorting ${headerText} in ascending order`);
-                sortTableByColumn(index, "asc");
+                sortTableByColumn(index, true);
             };
 
             const downArrow = document.createElement("a");
@@ -100,7 +100,7 @@ function createTableHeader(tableId) {
             downArrow.style.fontSize = "12px"; // Adjust arrow size
             downArrow.onclick = () => {
                 console.log(`Sorting ${headerText} in descending order`);
-                sortTableByColumn(index, "desc");
+                sortTableByColumn(index, false);
             };
 
             // Append the label and arrows to the container
@@ -133,24 +133,42 @@ createTableHeader("teachersTableHead");
 
 //=== End of code related how to sort from head ===//
 
+
+
+
 //=== code related how to use filter ===//
-const subjectFilter = document.getElementById("subjectFilter");
+
+// Event listener for the subject filter
+document.getElementById('subjectFilter').addEventListener('change', (event) => {
+  // Get the selected subject from the dropdown
+  const selectedSubject = event.target.value;
+  console.log("мы фильтруем")
+  console.log(selectedSubject)
+  
+  // Clear form fields
+  teacherForm.reset();
+
+  // Fetch filtered teachers and display them
+  renderTeachers(selectedSubject || null);
+});
 
 //=== end of code related how to use filter ===//
 
 
-  // Render schedule table
+  // Render table teachers
 
-  function renderTeachers() {
+  function renderTeachers(filters = null) {
 
     (document.querySelector("#teachersTableBody")).innerHTML = "";
 
     // get all teachers from localStorage
-    const teachers = getTeachers();
+    const teachers = getTeachers(filters);
 
+    console.log("отобрали учителей")
+    console.log(filters)
 
     teachers.forEach((teacher) => {
-
+      
       const row = (document.querySelector("#teachersTableBody")).insertRow();
       const cellName = row.insertCell(0);
       const cellSubject = row.insertCell(1);
@@ -192,21 +210,8 @@ const subjectFilter = document.getElementById("subjectFilter");
     // call function from localStorage to save dates
     saveTeacher(teacher);
 
-
-
-
-
-    // Add the new teacher to the schedule (you could extend this as needed)
-    teachersTable.push({
-      teacher: teacherName,
-      subject: teacherSubject,
-    });
-
-
-
     // Clear form fields
     teacherForm.reset();
-
 
     // Hide form after submission
     addTeacherForm.style.display = "none";
@@ -220,4 +225,6 @@ const subjectFilter = document.getElementById("subjectFilter");
 
 
 // Initial render
-renderTeachers();
+renderTeachers("all");
+// localStorage.clear();
+// console.log(localStorage.getItem('teachers'))

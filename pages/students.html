@@ -13,11 +13,11 @@
       <ul class="menu">
         <li><a href="../index.html">Home</a></li>
         <li>Students</li>
-        <li><a href="teachers.html">Teachers</a></li>
+        <li><a href="students.html">Students</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </nav> 
-
+    
     <h1>Students</h1>
     <div class="controls">
       <label for="subjectFilter">Filter by Subject:</label>
@@ -29,43 +29,53 @@
         <option value="english">English</option>
       </select>
     
+      <br>
 
-        <!-- Buttons Section -->
-        <div class="buttons">
-            <button id="addTeacherBtn">Add Student</button>
-        </div>
+      <!-- Buttons Section -->
+      <br>
+      <div class="buttons">
+        <button id="addStudentBtn">Add Studen</button>
+      </div>
 
-    <!-- Add Teacher Form (hidden by default) -->
-    <div id="addTeacherForm" class="form-container" style="display:none;">
+    <!-- Add Student Form (hidden by default) -->
+    <div id="addStudentForm" class="form-container" style="display:none;">
       <h2>Add New Student</h2>
-      <form id="teacherForm">
-        <label for="teacherName">Student Name:</label>
-        <input type="text" id="studentName" name="Name" required>
+      <form id="studentForm">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" required>
         
-        <label for="teacherSubject">Subject:</label>
+        <label for="studentSubject">Subject:</label>
         <input type="text" id="studentSubject" name="studentSubject" required>
 
+        <label for="studentOrt">Subject:</label>
+        <input type="text" id="studentOrt" name="studentOrt" required>
+
+        <label for="studentTelephone">Subject:</label>
+        <input type="text" id="studentTelephone" name="studentTelephone" required>
+
         <button type="submit">Save Student</button>
-        <button type="button" id="cancelAddTStudent">Cancel</button>
+        <button type="button" id="cancelAddStudent">Cancel</button>
       </form>
     </div>
+    
   </header>
 
   <main>
-    <table>
+    <table id="studentsTableHead">
       <thead>
         <tr>
-          <th>Name</th>
+          <!-- Head will be dynamically inserted here -->
           <th>Subject</th>
-          <th>Photo</th>
+          <th>Ort</th>
+          <th>Telefon nummer</th>
         </tr>
       </thead>
-      <tbody id="StudentsTable">
+      <tbody id="studentsTableBody">
         <!-- Rows will be dynamically inserted here -->
       </tbody>
     </table>
   </main>
 
-  <script type="module" src="../js/students.js"></script>
+  <script type="module" src="../js/students_add.js"></script>
 </body>
 </html>
